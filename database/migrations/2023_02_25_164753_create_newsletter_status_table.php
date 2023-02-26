@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('newsletter_status', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('newsletter_status_id')->unsigned();
+            $table->integer('newsletters_id');
+            $table->integer('user_id');
+            $table->integer('newsletter_status');
         });
     }
 

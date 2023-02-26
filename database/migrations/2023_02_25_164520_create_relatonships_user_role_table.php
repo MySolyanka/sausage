@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('relatonships_user_role', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('relatonships_id')->unsigned();
+            $table->integer('user_location_id')->unsigned();
+            $table->integer('role_id');
         });
     }
 

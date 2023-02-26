@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('subdivisions', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('subdivisions_id')->unsigned();
+            $table->string('subdivisions_name',255);
+            $table->string('organzation_id',255);
+            $table->integer('procreator');
         });
     }
 

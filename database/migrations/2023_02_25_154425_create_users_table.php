@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('vk_id',50);
             $table->string('telegram_id',50);
             $table->string('photo',255);
-            $table->string('password',60);
+            $table->string('password',60)->default('none');
 
         });
     }

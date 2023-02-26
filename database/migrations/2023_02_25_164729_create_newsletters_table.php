@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('newsletters_id')->unsigned();
+            $table->integer('subdivisions_id');
+            $table->json('data-binary');
+            $table->text('text');
+            $table->dateTime('data-time');
         });
     }
 
