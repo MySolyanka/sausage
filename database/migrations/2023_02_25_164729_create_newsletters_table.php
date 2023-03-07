@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('subdivisions_id');
             $table->json('data-binary');
             $table->text('text');
-            $table->dateTime('data-time');
+             $table->timestamps();
         });
     }
 
