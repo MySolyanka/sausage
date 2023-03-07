@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('subdivisions', function (Blueprint $table) {
             $table->id();
-            $table->integer('subdivisions_id')->unsigned();
             $table->string('subdivisions_name',255);
-            $table->string('organzation_id',255);
             $table->integer('procreator');
+        });
+
+        Schema::table('users_integrations', function (Blueprint $table) {
+            $table->unsignedBigInteger('organization_id');
+            $table->foreign('organization_id')->references('id')->on('organizations');
         });
     }
 

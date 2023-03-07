@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('relatonships_user_role', function (Blueprint $table) {
             $table->id();
-            $table->integer('relatonships_id')->unsigned();
-            $table->integer('user_location_id')->unsigned();
             $table->integer('role_id');
+        });
+
+        Schema::table('relatonships_user_role', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_location_id');
+            $table->foreign('user_location_id')->references('id')->on('users_location');
         });
     }
 

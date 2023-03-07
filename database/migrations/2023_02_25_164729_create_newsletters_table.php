@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
-            $table->integer('newsletters_id')->unsigned();
-            $table->integer('subdivisions_id');
-            $table->json('data-binary');
+            $table->json('data_binary');
             $table->text('text');
              $table->timestamps();
+        });
+
+        Schema::table('newsletters', function (Blueprint $table) {
+            $table->unsignedBigInteger('subdivisions_id');
+            $table->foreign('subdivisions_id')->references('id')->on('subdivisions');
         });
     }
 
